@@ -1,0 +1,208 @@
+/* styles.css */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Kanit', sans-serif;
+    background: linear-gradient(45deg, #ff99cc, #ff66b3, #ff3399);
+    background-size: 200% 200%;
+    animation: gradientBG 10s ease infinite;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero {
+    text-align: center;
+    color: white;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+    position: relative;
+    display: block; /* แสดงหน้าแรก */
+}
+
+.thank-you {
+    text-align: center;
+    color: white;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+    position: relative;
+    display: none; /* ซ่อนหน้าขอบคุณ */
+    background: radial-gradient(circle, rgba(255, 102, 179, 0.8), rgba(255, 51, 153, 0.5));
+    animation: pulseBG 4s ease infinite;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+}
+
+.title, .thank-title {
+    font-size: 5em;
+    margin: 0;
+    animation: bounceIn 2s ease-out;
+}
+
+.thank-title {
+    font-size: 4em;
+    color: #fff;
+    text-shadow: 0 0 10px #ff3399, 0 0 20px #ff66b3;
+}
+
+.subtitle, .thank-subtitle {
+    font-size: 1.8em;
+    margin: 20px 0;
+    animation: fadeInUp 2.5s ease-out;
+}
+
+.thank-subtitle {
+    font-size: 2em;
+    color: #ffe6f0;
+}
+
+.from {
+    font-size: 1.2em;
+    color: #ffe6f0;
+    margin: 10px 0;
+}
+
+.button-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.btn {
+    padding: 18px 50px;
+    font-size: 1.5em;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.5s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    background-color: #ff3399;
+    color: white;
+}
+
+.yes-btn {
+    background-color: #ff3399;
+}
+
+.no-btn {
+    background-color: #ff66b3;
+}
+
+.btn:hover {
+    transform: scale(1.2);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* ข้อความในหน้าขอบคุณ */
+.message {
+    margin-top: 20px;
+    background-color: rgba(255, 51, 153, 0.9);
+    color: white;
+    padding: 20px 40px;
+    border-radius: 20px;
+    font-size: 1.5em;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    display: none;
+    animation: fadeInOut 5s ease-in-out forwards;
+}
+
+/* หัวใจลอยในหน้าขอบคุณ */
+.love-hearts {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.love-hearts::before, .love-hearts::after,
+.love-hearts span:nth-child(1), .love-hearts span:nth-child(2),
+.love-hearts span:nth-child(3), .love-hearts span:nth-child(4) {
+    content: "♥";
+    position: absolute;
+    font-size: 3em;
+    color: #ff99cc;
+    animation: floatLove 6s infinite ease-in-out;
+}
+
+.love-hearts::before { left: 10%; top: 90%; animation-delay: 0s; }
+.love-hearts::after { left: 30%; top: 80%; animation-delay: 1s; }
+.love-hearts span:nth-child(1) { left: 50%; top: 85%; animation-delay: 2s; }
+.love-hearts span:nth-child(2) { left: 70%; top: 90%; animation-delay: 3s; }
+.love-hearts span:nth-child(3) { left: 20%; top: 70%; animation-delay: 4s; }
+.love-hearts span:nth-child(4) { left: 80%; top: 75%; animation-delay: 5s; }
+
+/* อนิเมชัน */
+@keyframes pulseBG {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes floatLove {
+    0% { opacity: 0; transform: translateY(0) scale(0.5); }
+    50% { opacity: 1; transform: translateY(-150px) scale(1); }
+    100% { opacity: 0; transform: translateY(-300px) scale(0.5); }
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(20px); }
+    10% { opacity: 1; transform: translateY(0); }
+    90% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-20px); }
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes bounceIn {
+    0% { opacity: 0; transform: scale(0.3); }
+    50% { opacity: 1; transform: scale(1.05); }
+    70% { transform: scale(0.9); }
+    100% { transform: scale(1); }
+}
+
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(50px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* หัวใจลอยหน้าแรก */
+.heart-animation {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.heart-animation::before, .heart-animation::after {
+    content: "♥";
+    position: absolute;
+    font-size: 2em;
+    color: #ff99cc;
+    animation: float 5s infinite ease-in-out;
+}
+
+.heart-animation::before { left: 20%; top: 80%; }
+.heart-animation::after { left: 70%; top: 60%; animation-delay: 1s; }
+
+@keyframes float {
+    0% { opacity: 0; transform: translateY(0); }
+    50% { opacity: 1; transform: translateY(-100px); }
+    100% { opacity: 0; transform: translateY(-200px); }
+}

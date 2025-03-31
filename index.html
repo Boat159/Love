@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ขอคนคุย เป็นแฟน</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="hero" id="main-page">
+        <h1 class="title">ขอคนคุย เป็นแฟน</h1>
+        <p class="subtitle">มาเริ่มต้นความรักครั้งใหม่ใกล้ๆ กันเถอะ!</p>
+        <div class="button-container">
+            <button class="btn yes-btn" id="yes-btn">เป็น</button>
+            <button class="btn no-btn" id="no-btn">ไม่เป็น</button>
+        </div>
+        <div class="heart-animation"></div>
+    </div>
+
+    <!-- หน้าขอบคุณ -->
+    <div class="thank-you" id="thank-you-page">
+        <div class="content">
+            <h1 class="thank-title">ขอบคุณเธอที่รักกัน</h1>
+            <p class="thank-subtitle">ทุกช่วงเวลากับเธอคือความฝันที่เป็นจริง</p>
+            <div class="message" id="wait-message">รอฟังเพลงด้วยนะ อิอิ</div>
+        </div>
+        <div class="love-hearts">
+            <span></span><span></span><span></span><span></span>
+        </div>
+    </div>
+
+    <!-- iframe สำหรับเพลง -->
+    <iframe id="music" width="0" height="0" frameborder="0" allow="autoplay"></iframe>
+
+    <script src="script.js"></script>
+</body>
+</html>
